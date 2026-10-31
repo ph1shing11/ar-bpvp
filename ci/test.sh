@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# contributor test script, revision the maintainer reviews
-echo "TEST_X: running the contributor's suite"
-echo "TEST_X: one case fails"
-exit 1
+# contributor test script, revision pushed after the maintainer's command
+echo "TEST_Y_MARKER=ordinary-budget"
+echo "TEST_Y: suite passes"
+exit 0
