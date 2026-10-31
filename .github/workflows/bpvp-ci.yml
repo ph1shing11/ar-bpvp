@@ -1,0 +1,30 @@
+name: BPVP-CI
+on:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: run the contributor's test script
+        run: bash ci/test.sh
+
+  deploy:
+    name: deploy
+    runs-on: ubuntu-latest
+    environment: production
+    permissions:
+      contents: read
+    steps:
+      - name: owner-controlled privileged step
+        run: |
+          echo "BPVP_DEPLOY_RAN=yes"
+          echo "BPVP_DEPLOY_ATTEMPT=${{ github.run_attempt }}"
+          echo "BPVP_DEPLOY_EVENT=${{ github.event_name }}"
+          echo "BPVP_DEPLOY_SHA=$GITHUB_SHA"
+          echo "BPVP_DEPLOY_TIME=$(date -u +%FT%TZ)"
