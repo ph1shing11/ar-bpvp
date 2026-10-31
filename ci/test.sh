@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# contributor test script, revision pushed after the maintainer's command
-echo "TEST_Y_MARKER=clean-a9336c3a"
-echo "TEST_Y: suite passes"
-exit 0
+# contributor test script, revision the maintainer reviews
+echo "TEST_X: running the contributor's suite"
+echo "TEST_X: one case fails"
+exit 1
