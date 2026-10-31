@@ -1,2 +1,3 @@
 # ar-bpvp
-disposable security-research lab
+
+Best-practice-victim lab for the Mergify Auto-Retry hunt. Disposable.
